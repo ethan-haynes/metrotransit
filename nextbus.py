@@ -47,7 +47,7 @@ class BusHandler:
     def __get_time__(self, route, stop):
         data, time = self.__http_conn__(f'/NexTrip/{route}/{self.direction}/{stop}?format=json'), None
 
-        if len(data):
+        if data and len(data):
             return data.pop(0)['DepartureText']
 
     def run(self):
@@ -58,7 +58,6 @@ class BusHandler:
             print(time)
 
 if __name__ == '__main__':
-
     try:
         if len(sys.argv) != 4: 
             raise ValueError('Input did not include {Route} {Stop} and {Direction}') 
