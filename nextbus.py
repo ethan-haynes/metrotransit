@@ -30,7 +30,7 @@ class BusHandler:
             if self.route == item['Description']:
                 route = item['Route']
         if not route:
-            raise ValueError(f'{self.route} is not a valid Route')
+            raise ValueError(f'{self.route} is not a valid Route.\nPlease choose between {[i["Description"] for i in data]}')
         
         return route
 
@@ -40,7 +40,7 @@ class BusHandler:
             if self.stop == item['Text']:
                 stop = item['Value']
         if not stop:
-            raise ValueError(f'{self.stop} is not a valid Stop')
+            raise ValueError(f'{self.stop} is not a valid Stop.\nPlease choose between {[i["Text"] for i in data]}')
 
         return stop
 
