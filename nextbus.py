@@ -1,7 +1,4 @@
 import http.client, json, sys
-from difflib import SequenceMatcher
-
-diff = lambda a, b: SequenceMatcher(None, a, b).ratio()
 
 class BusHandler:
     __metro_host__ = 'svc.metrotransit.org'
